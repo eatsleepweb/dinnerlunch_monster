@@ -47,7 +47,7 @@ footer {
 
 
 #logo {
-    background: url(./logo.png) no-repeat;
+    background: url('../images/logo.png') no-repeat;
     width: 230px;
     height: 95px;
     display: block;

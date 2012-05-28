@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <%= stylesheet_link_tag    "application", "bootstrap.min", "bootstrap-responsive.min", "style", :media => "all" %>
-  <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "application", "jquery", "jrails", "modernizr", "plugins", "script" %>
-  <%= csrf_meta_tags %>
-	<title>Dinner by way of lunch</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<head>
 
-  <!-- styles -->
-  <!-- <link href="library/styles/bootstrap.min.css" rel="stylesheet">
-          <link href="library/styles/bootstrap-responsive.min.css" rel="stylesheet">
-          <link href="library/styles/style.css" rel="stylesheet"> -->
+		<title>Dinner by way of lunch</title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  		<meta name="description" content="">
+  		<meta name="author" content="">
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  		<%= stylesheet_link_tag    "application", "bootstrap.min", "bootstrap-responsive.min", "style", :media => "all" %>
+  		<%= csrf_meta_tags %>  		
 
-  <!-- Modernizr -->
-  <!-- <script src="library/scripts/modernizr.js" type="text/javascript"></script> -->
+  		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  		<!--[if lt IE 9]>
+    		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  		<![endif]-->
 
-  <!-- fav and touch icons -->
-  <link rel="shortcut icon" href="library/images/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./images/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon-57-precomposed.png">
-</head>
-<body>
+  		<script src="library/scripts/modernizr.js" type="text/javascript"></script>
 
-<%= yield %>
+  		<!-- fav and touch icons -->
+  		<link rel="shortcut icon" href="library/images/favicon.ico">
+  		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/apple-touch-icon-144-precomposed.png">
+  		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./images/apple-touch-icon-114-precomposed.png">
+  		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/apple-touch-icon-72-precomposed.png">
+  		<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon-57-precomposed.png">
+	</head>
+	<body>
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+		<%= yield %>
 
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<%= javascript_include_tag :defaults %>
+  		<%= javascript_include_tag "application", "jrails", "plugins", "script" %>
+	</body>
 </html>

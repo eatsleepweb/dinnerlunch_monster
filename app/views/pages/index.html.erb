@@ -1,37 +1,28 @@
-<nav class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a><!-- end .btn.btn-navbar-->
-
-      <a class="brand" href="#">Dinner by Way of Lunch</a>
-
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-        </ul><!-- end .nav -->
-
-      </div><!-- .nav-collapse -->
-    </div><!-- end .container -->
-  </div><!-- end .navbar-inner -->
-</nav><!-- end .navbar.navbar-fixed-top -->
-
 <section id="main" role="main">
 
     <div class="container">
 
-        <% form_remote_tag :html => {:id => "ajaxian", :method => "get", :data_type => :json}, :url => url_for(:controller => :pages, :action => :find_dinners) do %>
-			<%= text_field_tag "lunch", '', :placeholder => "What did you have for lunch?", :required => true %>
-			<%= submit_tag "Submit" %>
+        <h1>What did you have for lunch?</h1>
+
+        <% form_remote_tag :html => {:id => "ajaxian", :class => "center span9", :method => "get", :data_type => :json}, :url => url_for(:controller => :pages, :action => :find_dinners) do %>
+			<%= text_field_tag "lunch", '', :class => "span8", :required => true %>
+			<%= submit_tag "Submit", :id => "submit", :class=> "span1" %>
         <% end %>
 
-		<div id="dinner_list">
+		<div id="dinner_list" class="center span9">
 		</div>
+
+		<footer class="span4 center">
+		    <div id="logo" class="span3 center">
+		    </div><!-- end #logo -->
+		    <p class="description">
+		        Created by
+		            <a href="http://bassamtariq.net/" target="_blank">Bassam</a>,
+		            <a href="http://gapsintheweb.com/" target="_blank">Robbie</a>,
+		            <a href="#" target="_blank">Andrew</a>, &#38;
+		            <a href="http://elifbayrasli.com" target="_blank">Elif</a>.
+		    </p><!-- end .description -->
+		</footer>
     </div> <!-- .container -->
 	
 	

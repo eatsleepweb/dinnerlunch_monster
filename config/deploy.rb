@@ -1,13 +1,37 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
 
-set :scm, :subversion
+set :application, "dinnerbywayoflunch"
+
+default_run_options[:pty] = true  # Must be set for the password prompt from git to work
+set :repository, "git@github.com:nethermead/dinnerlunch_monster.git"  # Your clone URL
+set :scm, "git"
+set :user, "zaynabtv"  # The server's user for deploys
+set :scm_passphrase, "Aisha2053*"  # The deploy user's password
+set :branch, "master"
+set :scm_verbose, true
+set :deploy_via, :copy
+
+set :deploy_to, "/home/zaynabtv/rails_apps/#{application}"
+
+set :use_sudo, false
+
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+# It's a single server, so let's not risk typos for web/app/db
+set :location, "#{application}.com"
+
+role :web, "#{location}"                          # Your HTTP server, Apache/etc
+role :app, "#{location}"                          # This may be the same as your `Web` server
+role :db,  "#{location}", :primary => true       # This is where Rails migrations will run
+
+namespace :deploy do
+  task  :symlink_shared  do
+    run “ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml”
+  end
+
+  task  :restart  do
+    run “cd #{current_path} && sudo mongrel_rails restart”
+  end
+end
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"

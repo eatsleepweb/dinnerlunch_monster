@@ -1,4 +1,3 @@
-
 set :application, "dinnerbywayoflunch"
 
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
@@ -25,13 +24,16 @@ role :db,  "#{location}", :primary => true       # This is where Rails migration
 
 namespace :deploy do
   task  :symlink_shared  do
-    run “ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml”
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
   task  :restart  do
-    run “cd #{current_path} && sudo mongrel_rails restart”
+    run "cd #{current_path} && sudo mongrel_rails restart"
   end
 end
+
+
+
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"

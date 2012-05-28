@@ -1,0 +1,23 @@
+<h1>New lunch_to_dinner</h1>
+
+<% form_for(@lunch_to_dinner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :lunch_id %><br />
+    <%= f.text_field :lunch_id %>
+  </p>
+  <p>
+    <%= f.label :dinner_id %><br />
+    <%= f.text_field :dinner_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', lunch_to_dinners_path %>

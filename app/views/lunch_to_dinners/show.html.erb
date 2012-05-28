@@ -1,0 +1,18 @@
+<p>
+  <b>Lunch:</b>
+  <%=h @lunch_to_dinner.lunch_id %>
+</p>
+
+<p>
+  <b>Dinner:</b>
+  <%=h @lunch_to_dinner.dinner_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @lunch_to_dinner.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_lunch_to_dinner_path(@lunch_to_dinner) %> |
+<%= link_to 'Back', lunch_to_dinners_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lunch_id: 1
+  dinner_id: 1
+  description: MyText
+
+two:
+  lunch_id: 1
+  dinner_id: 1
+  description: MyText

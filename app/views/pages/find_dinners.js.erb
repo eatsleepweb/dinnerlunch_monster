@@ -1,0 +1,5 @@
+<%- if @lunch.nil? %>
+$('#dinner_list').html("<h3>Sorry!</h3><p>No dinners found to match '<%= params[:lunch] %>'...</p>");  
+<% else %>
+$('#dinner_list').html("<h3>Dinners!</h3><ul><%- @lunch.lunch_to_dinners.each do |dinner| %><li><%= dinner.to_s %></li><% end %></ul>");  
+<% end %>

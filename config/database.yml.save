@@ -1,0 +1,22 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: true
+  database: zaynabtv_dinnerlunch_dev
+  username: zaynabtv_dlman
+  password: fHb*o=$c#dV#
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: true
+  database: zaynabtv_dinnerlunch_prod
+  username: zaynabtv_dlman
+  password: fHb*o=$c#dV#
+

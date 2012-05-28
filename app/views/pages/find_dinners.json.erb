@@ -1,0 +1,5 @@
+<% if @lunch.nil? %>
+	<%= [].to_json.html_safe %>
+<% else %>
+	<%= @lunch.lunch_to_dinners.to_json.html_safe %>
+<% end %>

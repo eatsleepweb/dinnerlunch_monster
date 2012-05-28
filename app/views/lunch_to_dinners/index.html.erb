@@ -1,0 +1,24 @@
+<h1>Listing lunch_to_dinners</h1>
+
+<table>
+  <tr>
+    <th>Lunch</th>
+    <th>Dinner</th>
+    <th>Description</th>
+  </tr>
+
+<% @lunch_to_dinners.each do |lunch_to_dinner| %>
+  <tr>
+    <td><%=h lunch_to_dinner.lunch_id %></td>
+    <td><%=h lunch_to_dinner.dinner_id %></td>
+    <td><%=h lunch_to_dinner.description %></td>
+    <td><%= link_to 'Show', lunch_to_dinner %></td>
+    <td><%= link_to 'Edit', edit_lunch_to_dinner_path(lunch_to_dinner) %></td>
+    <td><%= link_to 'Destroy', lunch_to_dinner, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New lunch_to_dinner', new_lunch_to_dinner_path %>

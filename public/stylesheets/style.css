@@ -61,7 +61,7 @@ footer {
 }
 
 @media (max-width:767px) {
-    h1 { font-size: 34px; line-height: 1.6em; text-align: center; }
+    h1 { font-size: 32px; line-height: 1.6em; text-align: center; }
     h2 { font-size: 25px; line-height: 1.4em; }
 
     #lunch {

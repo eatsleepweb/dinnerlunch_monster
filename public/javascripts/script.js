@@ -1,10 +1,15 @@
 $(document).ready(function(){
 
+    var $dinnerOptions = $('#options').attr('data-options'),
+		$anotherOption = $('#options').attr('data-another');
+		
+	$('#option').text($dinnerOptions);
+
     var currentDinnerIndex = -1;
 
     var dinners;
 
-    var lastLunchName = "xxxxxxx";
+    var lastLunchName = 'xxxxxxx';
 
     var getJSONData = function(data, xhr, status) {
     	dinners = JSON.parse(xhr.responseText);
@@ -13,18 +18,18 @@ $(document).ready(function(){
     		showNextDinner();
     	} else {
     		currentDinnerIndex = -1;
-    		$("#dinner_list")
+    		$('#dinner_list')
                 .html(
-                    "<h2>No dinners found for '"
+                    '<h2>No dinners found for '
                         +lastLunchName+
-                    "'...</h2>"
+                    '...</h2>'
             );
     	}
 
     }
 
     var queryOrNot = function(settings, xhr) {
-    	var currentText = $("input[id=lunch]").val().toLowerCase();
+    	var currentText = $('input[id=lunch]').val().toLowerCase();
     	if (currentText == lastLunchName) {
     		if (dinners != null && dinners.length > 0) {
     			showNextDinner();
@@ -39,9 +44,9 @@ $(document).ready(function(){
 
 
     $(function($) {
-    	 $("#ajaxian")
-    	 	.bind("ajax:beforeSend",  queryOrNot)
-    	 	.bind("ajax:complete",  getJSONData);
+    	 $('#ajaxian')
+    	 	.bind('ajax:beforeSend',  queryOrNot)
+    	 	.bind('ajax:complete',  getJSONData);
     });
 
     function showNextDinner() {
@@ -61,18 +66,26 @@ $(document).ready(function(){
     function showDinner() {
 
 
-        $("#dinner_list")
+        $('#dinner_list')
             .html(
-                "<h2>Then you should have " +
-                    "<span class='dinner_name'>"
+                '<h2>Then you should have ' +
+                    '<span class="dinner_name">'
                         + dinners[currentDinnerIndex].name +
-                    "</span> " +
-                    "for dinner becuase " +
-                    "<span class='dinner_reason_body'>"
+                    '</span> ' +
+                    'for dinner becuase ' +
+                    '<span class="dinner_reason_body">'
                         + dinners[currentDinnerIndex].reason +
-                    "</span>" +
-                "</h2>");
+                    '</span>' +
+                '</h2>');
+                
+        $('#option').text($anotherOption);
     }
+    
+    $('a.more').click(function(){
+
+        $('#additional').slideToggle('slow');
+
+    });
 
 });
 

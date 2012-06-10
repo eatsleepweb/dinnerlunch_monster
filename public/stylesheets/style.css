@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'MidoMedium';
-    src: url('../fonts/mido/Mido-webfont.eot');
-    src: url('../fonts/mido/Mido-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/mido/Mido-webfont.woff') format('woff'),
-         url('../fonts/mido/Mido-webfont.ttf') format('truetype'),
-         url('../fonts/mido/Mido-webfont.svg#MidoMedium') format('svg');
+    src: url('./mido/Mido-webfont.eot');
+    src: url('./mido/Mido-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./mido/Mido-webfont.woff') format('woff'),
+         url('./mido/Mido-webfont.ttf') format('truetype'),
+         url('./mido/Mido-webfont.svg#MidoMedium') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -17,15 +17,23 @@ body {
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 h1 { font-size: 60px; line-height: 1.6em; text-align: center; }
-h2 span { text-decoration: underline; }
+h2 span { text-decoration: none; }
+
+p { font: 15px/1.6em 'MidoMedium', georgia, 'times new roman', serif }
 
 a:link, a:visited,
-a:hover, a:active { color: #000; text-decoration: underline; }
+a:hover, a:active { color: #000; text-decoration: none; }
 
 
 ul, li { margin: 0; padding: 0; list-style: none; }
 
 #main { padding: 60px 0 0; }
+
+.container { position: relative; }
+
+form#ajaxian { position: relative; }
+
+#additional { height: 350px; margin-top: 20px; z-index: 500; }
 
 .center {
     position: relative;
@@ -38,16 +46,19 @@ input#submit {
     outline: none;
     display: inline-block;
     text-indent: -9999em;
+    box-shadow: none;
+    position: absolute;
+    top: 1%;
+    right: 1%;
 }
 
-footer {
-    margin-top: 50px;
+.more { position: absolute; z-index: 1000; }
 
-}
+footer { margin-top: 50px; }
 
 
 #logo {
-    background: url('../images/logo.png') no-repeat;
+    background: url(./logo.png) no-repeat;
     width: 230px;
     height: 95px;
     display: block;
@@ -62,7 +73,7 @@ footer {
 
 @media (max-width:767px) {
     h1 { font-size: 32px; line-height: 1.6em; text-align: center; }
-    h2 { font-size: 25px; line-height: 1.4em; }
+    h2 { font-size: 18px; line-height: 1.4em; }
 
     #lunch {
         height: 48px;
@@ -72,14 +83,20 @@ footer {
     }
 
     input#submit {
-        background: url('../images/submit_768.png') no-repeat top left;
-        width: 48px;
-        height: 48px;
+        background: url('./submit_small.jpg') no-repeat top left;
+        width: 51px;
+        height: 51px;
     }
 
     #dinner_list {
         margin-top: 20px;
         margin-bottom: 30px;
+    }
+
+    .more {
+        position: absolute;
+        right: 17%;
+        top: 100px;
     }
 }
 
@@ -95,14 +112,20 @@ footer {
     }
 
     input#submit {
-        background: url('../images/submit_768.png') no-repeat top left;
-        width: 48px;
-        height: 48px;
+        background: url('./submit_small.jpg') no-repeat top left;
+        width: 51px;
+        height: 51px;
     }
 
     #dinner_list {
         margin-top: 20px;
         margin-bottom: 30px;
+    }
+
+    .more {
+        position: absolute;
+        right: 22%;
+        top: 90px;
     }
 }
 
@@ -116,15 +139,22 @@ footer {
     }
 
     input#submit {
-        background: url('../images/submit_768.png') no-repeat top left;
-        width: 48px;
-        height: 48px;
+        background: url('./submit_small.jpg') no-repeat top left;
+        width: 51px;
+        height: 51px;
     }
 
     #dinner_list {
         margin-top: 20px;
         margin-bottom: 30px;
     }
+
+    .more {
+        position: absolute;
+        right: 22%;
+        top: 145px;
+    }
+
 }
 
 @media (min-width:980px) {
@@ -138,14 +168,20 @@ footer {
 
 
     input#submit {
-        background: url('../images/submit.png') no-repeat top left;
-        width: 66px;
-        height: 66px;
+        background: url('./submit.jpg') no-repeat top left;
+        width: 67px;
+        height: 67px;
     }
 
     #dinner_list {
         margin-top: 30px;
         margin-bottom: 30px;
+    }
+
+    .more {
+        position: absolute;
+        right: 22%;
+        top: 190px;
     }
 }
 

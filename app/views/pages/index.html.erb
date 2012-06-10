@@ -6,19 +6,80 @@
 
         <% form_remote_tag :html => {:id => "ajaxian", :class => "center span9", :method => "get", :data_type => :json}, :url => url_for(:controller => :pages, :action => :find_dinners) do %>
 			<%= text_field_tag "lunch", '', :class => "span8", :required => true %>
+			
+			<section id="additional" class="hide">
+                <section class="span4">
+                    <p>Add multiple peoples lunches into consideration</p>
+
+                    <div>
+                        <label for="person2">Person 2</label>
+                        <input type="text" id="person2" name="person2" class="addPerson" />
+                    </div>
+                    <div>
+                        <label for="person3">Person 3</label>
+                        <input type="text" id="person3" name="person3" class="addPerson" />
+                    </div>
+                    <div>
+                        <label for="person4">Person 4</label>
+                        <input type="text" id="person4" name="person4" class="addPerson" />
+                    </div>
+                    <div>
+                        <label for="person5">Person 5</label>
+                        <input type="text" id="person5" name="person5" class="addPerson" />
+                    </div>
+                    <div>
+                        <label for="person6">Person 6</label>
+                        <input type="text" id="person6" name="person6" class="addPerson" />
+                    </div>
+                </section>
+                <section class="span2">
+                    <p>Add dietary restrictions</p>
+
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Vegetarian" /> Vegetarian<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Low Calorie" /> Low Calorie<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Glutan Free" /> Glutan Free<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Diabetic" /> Diabetic<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Kosher" /> Kosher<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Vegan" /> Vegan<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Lactose Intolerant" /> Lactose Intolerant<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Carb Free" /> Carb Free<br />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietary-restriction" value="Peanut Allergy" /> Peanut Allergy<br />
+                    </div>
+                </section>
+            </section><!-- end #additional -->
+			
 			<%= submit_tag "Submit", :id => "submit", :class=> "span1" %>
         <% end %>
+        <a href="#" class="more">more options</a>
+        <button type="button" id="options" data-options="More options" data-another="Choose another option"></button>
 
 		<div id="dinner_list" class="center span9">
 		</div>
 
-		<footer class="span4 center">
+		<footer class="span3 center">
 		    <div id="logo" class="span3 center">
 		    </div><!-- end #logo -->
 		    <p class="description">
 		        Created by
-		            <a href="http://bassamtariq.net/" target="_blank">Bassam</a>,
-		            <a href="http://gapsintheweb.com/" target="_blank">Robbie</a>,
+		            <a href="http://www.facebook.com/denrae" target="_blank">Bassam</a>,
+		            <a href="http://www.facebook.com/profile.php?id=908334" target="_blank">Robbie</a>,
 		            <a href="#" target="_blank">Andrew</a>, &#38;
 		            <a href="http://elifbayrasli.com" target="_blank">Elif</a>.
 		    </p><!-- end .description -->
